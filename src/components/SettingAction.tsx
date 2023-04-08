@@ -24,7 +24,7 @@ export default function SettingAction(props: {
     >
       <Show when={shown()}>
         <div class="<sm:max-h-10em max-h-14em overflow-y-auto">
-          <SettingItem icon="i-ri:lock-password-line" label="网站密码">
+          <SettingItem icon="i-ri:lock-password-line" label="пароль веб-сайта">
             <input
               type="password"
               value={props.setting().password}
@@ -52,7 +52,7 @@ export default function SettingAction(props: {
           </SettingItem>
           <SettingItem
             icon="i-carbon:machine-learning-model"
-            label="OpenAI 模型"
+            label="OpenAI Модель"
           >
             <select
               name="model"
@@ -70,7 +70,7 @@ export default function SettingAction(props: {
               <option value="gpt-4-32k">gpt-4(32k)</option>
             </select>
           </SettingItem>
-          <SettingItem icon="i-carbon:user-online" label="系统角色指令">
+          <SettingItem icon="i-carbon:user-online" label="команда системной роли">
             <input
               type="text"
               value={props.setting().systemRule}
@@ -83,7 +83,7 @@ export default function SettingAction(props: {
               }}
             />
           </SettingItem>
-          <SettingItem icon="i-carbon:data-enrichment" label="思维发散程度">
+          <SettingItem icon="i-carbon:data-enrichment" label="Расхождение мышления">
             <input
               type="range"
               min={0}
@@ -121,7 +121,7 @@ export default function SettingAction(props: {
           </SettingItem>
           <SettingItem
             icon="i-carbon:3d-curve-auto-colon"
-            label="开启连续对话，将加倍消耗 Token"
+            label="Открытие непрерывного диалога удвоит потребление Token"
           >
             <label class="relative inline-flex items-center cursor-pointer ml-1">
               <input
@@ -147,7 +147,7 @@ export default function SettingAction(props: {
             setShown(!shown())
           }}
           icon="i-carbon:settings"
-          label="设置"
+          label="настраивать"
         />
         <div class="flex">
           <ActionItem
@@ -161,10 +161,10 @@ export default function SettingAction(props: {
                 ? "i-ri:check-fill dark:text-yellow text-yellow-6"
                 : "i-carbon:image"
             }
-            label="导出图片"
+            label="экспортировать изображение"
           />
           <ActionItem
-            label="导出 Markdown"
+            label="экспорт Markdown"
             onClick={async () => {
               await exportMD(props.messaages)
               setCopied(true)
@@ -179,7 +179,7 @@ export default function SettingAction(props: {
           <ActionItem
             onClick={props.clear}
             icon="i-carbon:trash-can"
-            label="清空对话"
+            label="четкий разговор"
           />
         </div>
       </div>
@@ -244,10 +244,10 @@ async function exportJpg() {
 
 async function exportMD(messages: ChatMessage[]) {
   const role = {
-    system: "系统",
-    user: "我",
+    system: "система",
+    user: "я",
     assistant: "ChatGPT",
-    error: "错误"
+    error: "ошибка"
   }
   await copyToClipboard(
     messages
